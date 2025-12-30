@@ -12,5 +12,8 @@ class Settings:
 
     COMPETITORS = ["newton", "scaler", "udemy"]
 
+    with open("masai_policy.txt", "r") as file:
+        POLICY_TEXT = file.read()
+
 
 settings = Settings()

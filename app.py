@@ -1,6 +1,6 @@
 import streamlit as st
 from gpt_service import generate_answer
-from guard_service import check_input
+from guard_service import check_input, check_validity_by_llm
 
 def main():
     st.title("Masai Chatbot")
@@ -20,9 +20,7 @@ def main():
 
         st.session_state.messages.append({"role": "user", "content" : query})
 
-        is_valid = check_input(query)
-
-        print(is_valid)
+        is_valid = check_validity_by_llm(query)
 
         if not is_valid["valid"]:
             with st.chat_message("assistant"):

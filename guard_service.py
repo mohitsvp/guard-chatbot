@@ -1,4 +1,5 @@
 from settings import settings
+from gpt_service import check_validity_by_llm
 
 
 def check_input(query: str) -> dict:
